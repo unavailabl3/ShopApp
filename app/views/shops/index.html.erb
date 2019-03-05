@@ -1,0 +1,54 @@
+<div class="main">
+  <h1>Добавить магазин на Lookbuck</h1>
+
+   <div class="col-md-6 col-sm-12">
+      <div class="login-form">
+         <%= form_for :shop, url: "shops/new" do |form| %>
+         <div class='formpart'>
+         <h3>Данные вашего магазина</h3>
+           <div class="form-group">
+             <label for="title">Название</label>
+             <%= text_field(:shop, :title, class: "form-text form-control",:required => true) %>
+           </div>
+           <div class="form-group">
+             <label for="site">Сайт</label>
+             <%= text_field(:shop, :site, class: "form-text form-control",:required => true) %>
+           </div>
+           <div class="form-group">
+             <label for="city">Город</label>
+             <%= text_field(:shop, :city, class: "form-text form-control",:required => true) %>
+           </div>
+           <div class="form-group">
+             <label for="companyphone">Телефон компании</label>
+             <%= text_field(:shop, :companyphone, class: "form-text form-control",:required => true) %>
+           </div>
+           <div class="form-group">
+             <label for="yml">Ссылка на YML-файл</label>
+             <%= text_field(:shop, :yml, class: "form-text form-control",:required => true) %>
+           </div>
+           <div class="form-group">
+             <label for="inn">ИНН</label>
+             <%= text_field(:shop, :inn, class: "form-text form-control",:required => true) %>
+           </div>
+          </div>
+            <div class='formpart'>
+            <h3>Контактные данные сотрудника, который будет работать с Lookbuck</h3>
+            <div class="form-group">
+              <label for="fio">Имя и Фамилия</label>
+              <%= text_field(:shop, :fio, class: "form-text form-control",:required => true) %>
+            </div>
+            <div class="form-group">
+               <label for="email">Email</label>
+               <%= email_field(:shop, :address, class: "form-text form-control",:required => true) %>
+            </div>
+            <div class="form-group">
+              <label for="phone">Телефон</label>
+              <%= text_field(:shop, :phone, class: "form-text form-control",:required => true) %>
+            </div>
+            </div>
+            <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+            <%= form.submit  "Login", class:"btn btn-primary"%>
+         <% end %>
+      </div>
+   </div>
+</div>
